@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :comments, only: [:create, :edit, :update, :destroy]
 
-  resources :friendships, only: [:create, :update, :destroy]
+  resources :friendships, only: [:index, :create, :update, :destroy]
   post 'friendships/:user_id', to: 'friendships#create', as: :user
 
   root 'photos#index'

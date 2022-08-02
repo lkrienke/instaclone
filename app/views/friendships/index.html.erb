@@ -12,7 +12,7 @@
   <tbody>
     <% @friendships.each do |friendship| %>
       <tr>
-        <td><%= link_to 'Show', friendship %></td>
+        <td> Test </td>
         <td><%= link_to 'Delete Friend', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -20,5 +20,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Friendship', new_friendship_path %>
