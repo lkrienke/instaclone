@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :friendships
   devise_for :users
 
   devise_scope :user do
@@ -12,6 +11,8 @@ Rails.application.routes.draw do
   resources :photos, only: [:index, :show, :new, :create, :destroy]
 
   resources :comments, only: [:create, :edit, :update, :destroy]
+
+  resources :friendships
 
   root 'photos#index'
 
