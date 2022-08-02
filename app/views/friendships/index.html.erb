@@ -12,7 +12,7 @@
   <tbody>
     <% @friendships.each do |friendship| %>
       <tr>
-        <td> Test </td>
+        <td> <%= friendship.id %> </td>
         <td><%= link_to 'Delete Friend', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

@@ -4,11 +4,7 @@ class FriendshipsController < ApplicationController
 
   # GET /friendships or /friendships.json
   def index
-    @friendships ||= Friendship.where(user_id: current_user.id)
-    @friendships ||= Friendship.where(friend_id: current_user.id)
-  end
-
-  def friend_requests
+    @friendships = friendships_by_requester_ids
   end
 
   # POST /friendships or /friendships.json
@@ -60,5 +56,13 @@ class FriendshipsController < ApplicationController
 
     def update_params
       params.permit(:accepted)
+    end
+
+    def friendships_by_receiver_ids
+      Friendship.where(user_id: current_user.id)
+    end
+
+    def friendships_by_requester_ids
+      Friendship.where(friend_id: current_user.id)
     end
 end
