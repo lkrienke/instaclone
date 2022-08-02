@@ -1,9 +1,11 @@
 <div>
   <h3><%= @user.username %>'s profile</h3>
-
-  <p>
     <% if current_user&.eql? @user %>
       <%= link_to "Upload photos", new_photo_path %>
+
+    <% else %>
+      <%= link_to "Add Friend", friendship_path(@user, friend_id: current_user.id), method: :post %>
+
     <% end %>
   </p>
 
@@ -16,4 +18,5 @@
       <% end %>
     <% end %>
   <% end %>
+
 </div>
